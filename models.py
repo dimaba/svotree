@@ -9,8 +9,8 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-    instructions_slider = 'svotree/slider/SliderInstructions.html'
-    instructions_9tdm = 'svotree/9tdm/NineItemTDMInstructions.html'
+    instructions_slider = 'svotree/SliderInstructions.html'
+    instructions_9tdm = 'svotree/NineItemTDMInstructions.html'
 
 
 class Subsession(BaseSubsession):
