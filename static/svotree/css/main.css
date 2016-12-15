@@ -111,11 +111,11 @@ body {
     right: 0px;
 }
 
-.tdm-item.table-condensed {
+.table-condensed {
     border-top: 0px;
 }
 
-.table.tdm-cell {
+.tdm-cell {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
