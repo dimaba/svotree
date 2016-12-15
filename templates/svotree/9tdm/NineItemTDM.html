@@ -1,0 +1,49 @@
+{% extends "normative_conflict_svo/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_9tdm %}
+
+    <div class="container-fluid">
+    {% for decision in nine_item_tdm_decisions %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                     <div class="panel-heading"><strong>{{ decision.number }}</strong></div>
+                     <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-4" align="center">
+                                <strong>A</strong><br>
+                                {{ decision.optionA }}<br>
+                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" />
+                            </div>
+                            <div class="col-sm-4" align="center">
+                                <strong>B</strong><br>
+                                {{ decision.optionB }}<br>
+                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" />
+                            </div>
+                            <div class="col-sm-4" align=""center>
+                                <strong>C</strong><br>
+                                {{ decision.optionC }}<br>
+                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" />
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    <button class="btn btn-primary btn-large" id="continue_button" >Continue</button>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

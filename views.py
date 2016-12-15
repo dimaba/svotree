@@ -61,14 +61,22 @@ class SliderPrimaryContinuous(Page):
         self.player.slider_angle = svo_slider_angle
 
 
+class NineItemTDM(Page):
+
+    #form
+
+    def vars_for_template(self):
+        decisions = [
+            {'number': 1, 'optionA': 'You: 80 - Other: 0', 'optionB': 'You: 92 - Other: 40', 'optionC': 'You: 80 - Other: 80'},
+        ]
+
+        return {'decisions': decisions}
+
 class DebugDisplayPage(Page):
 
     def vars_for_template(self):
         return {'angle': self.player.slider_angle}
 
 page_sequence = [
-    SliderPrimaryDiscrete,
-    DebugDisplayPage,
-    SliderPrimaryContinuous,
-    DebugDisplayPage
+    NineItemTDM
 ]

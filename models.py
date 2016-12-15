@@ -10,6 +10,7 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     instructions_slider = 'svotree/slider/SliderInstructions.html'
+    instructions_9tdm = 'svotree/9tdm/NineItemTDMInstructions.html'
 
 
 class Subsession(BaseSubsession):
