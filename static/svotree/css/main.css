@@ -110,3 +110,12 @@ body {
     top: 0px;
     right: 0px;
 }
+
+.tdm-item.table-condensed {
+    border-top: 0px;
+}
+
+.table.tdm-cell {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
