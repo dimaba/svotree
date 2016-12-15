@@ -70,7 +70,7 @@ class NineItemTDM(Page):
             {'number': 1, 'optionA': 'You: 80 - Other: 0', 'optionB': 'You: 92 - Other: 40', 'optionC': 'You: 80 - Other: 80'},
         ]
 
-        return {'decisions': decisions}
+        return {'nine_item_tdm_decisions': decisions}
 
 class DebugDisplayPage(Page):
 
