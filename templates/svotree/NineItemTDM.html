@@ -17,28 +17,35 @@
                      <div class="panel-heading"><strong>{{ decision.number }}</strong></div>
                      <div class="panel-body">
                         <div class="row">
-                            <div class="col-sm-3" align="right">
-                                <br>
-                                <strong>You receive</strong><br>
-                                <strong>Other receives</strong><br>
+                            <div class="col-sm-6">
+                                <table class="table-condensed">
+                                    <tr>
+                                        <th>{{ decision.number }}</th>
+                                        <th align="center"><strong>A</strong></th>
+                                        <th align="center"><strong>B</strong></th>
+                                        <th align="center"><strong>C</strong></th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>You receive</strong></td>
+                                        <td>{{ decision.optionA.self }}</td>
+                                        <td>{{ decision.optionB.self }}</td>
+                                        <td>{{ decision.optionC.self }}</td>
+                                    </tr>                                    <tr>
+                                    <td><strong>Other receives</strong></td>
+                                        <td>{{ decision.optionA.other }}</td>
+                                        <td>{{ decision.optionB.other }}</td>
+                                        <td>{{ decision.optionC.other }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" /></td>
+                                        <td><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" /></td>
+                                        <td><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" /></td>
+                                    </tr>
+                                </table>
                             </div>
-                            <div class="col-sm-3" align="center">
-                                <strong>A</strong><br>
-                                {{ decision.optionA.self }}<br>
-                                {{ decision.optionA.other }}<br>
-                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" />
-                            </div>
-                            <div class="col-sm-3" align="center">
-                                <strong>B</strong><br>
-                                {{ decision.optionB.self }}<br>
-                                {{ decision.optionB.other }}<br>
-                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" />
-                            </div>
-                            <div class="col-sm-3" align="center">
-                                <strong>C</strong><br>
-                                {{ decision.optionC.self }}<br>
-                                {{ decision.optionC.other }}<br>
-                                <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" />
+                            <div class="col-sm-6" align="center">
+
                             </div>
                         </div>
                      </div>
