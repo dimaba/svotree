@@ -67,7 +67,7 @@ class NineItemTDM(Page):
 
     def vars_for_template(self):
         decisions = [
-            {'number': 1, 'optionA': 'You: 80 - Other: 0', 'optionB': 'You: 92 - Other: 40', 'optionC': 'You: 80 - Other: 80'},
+            {'number': 1, 'optionA': {'self': 80, 'Other': 0}, 'optionB': {'self': 92, 'Other': 40}, 'optionC': {'self': 80, 'Other': 80}},
         ]
 
         return {'nine_item_tdm_decisions': decisions}
