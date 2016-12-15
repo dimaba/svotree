@@ -10,49 +10,46 @@
     {% include Constants.instructions_9tdm %}
 
     <div class="container-fluid">
-    {% for decision in nine_item_tdm_decisions %}
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-default">
-                     <div class="panel-heading"><strong>{{ decision.number }}</strong></div>
+                     <div class="panel-heading"><strong>PANEL TITLE</strong></div>
                      <div class="panel-body">
                         <div class="row">
-                            <div class="col-sm-6 tdm-item">
-                                <table class="table">
+                            {% for decision in nine_item_tdm_decisions %}
+                            <div class="col-sm-4 tdm-item">
+                                <table>
                                     <tr>
-                                        <th>{{ decision.number }}</th>
-                                        <th align="center"><strong>A</strong></th>
-                                        <th align="center"><strong>B</strong></th>
-                                        <th align="center"><strong>C</strong></th>
+                                        <th class="tdm-cell">{{ decision.number }}</th>
+                                        <th class="tdm-cell tdm-choice"><strong>A</strong></th>
+                                        <th class="tdm-cell tdm-choice"><strong>B</strong></th>
+                                        <th class="tdm-cell tdm-choice"><strong>C</strong></th>
                                     </tr>
                                     <tr>
-                                        <td><strong>You receive</strong></td>
-                                        <td class="tdm-cell">{{ decision.optionA.self }}</td>
-                                        <td class="tdm-cell">{{ decision.optionB.self }}</td>
-                                        <td class="tdm-cell">{{ decision.optionC.self }}</td>
+                                        <td class="tdm-cell"><strong>You receive</strong></td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionA.self }}</td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionB.self }}</td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionC.self }}</td>
                                     </tr>                                    <tr>
-                                    <td><strong>Other receives</strong></td>
-                                        <td class="tdm-cell">{{ decision.optionA.other }}</td>
-                                        <td class="tdm-cell">{{ decision.optionB.other }}</td>
-                                        <td class="tdm-cell">{{ decision.optionC.other }}</td>
+                                    <td class="tdm-cell"><strong>Other receives</strong></td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionA.other }}</td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionB.other }}</td>
+                                        <td class="tdm-cell tdm-choice">{{ decision.optionC.other }}</td>
                                     </tr>
                                     <tr>
-                                        <td></td>
-                                        <td class="tdm-cell"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" /></td>
-                                        <td class="tdm-cell"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" /></td>
-                                        <td class="tdm-cell"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" /></td>
+                                        <td class="tdm-cell"></td>
+                                        <td class="tdm-cell tdm-choice"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" /></td>
+                                        <td class="tdm-cell tdm-choice"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" /></td>
+                                        <td class="tdm-cell tdm-choice"><input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" /></td>
                                     </tr>
                                 </table>
                             </div>
-                            <div class="col-sm-6" align="center">
-
-                            </div>
+                            {% endfor %}
                         </div>
                      </div>
                 </div>
             </div>
         </div>
-    {% endfor %}
     </div>
 
     <button class="btn btn-primary btn-large" id="continue_button" >Continue</button>

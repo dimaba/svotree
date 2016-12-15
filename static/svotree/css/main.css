@@ -111,11 +111,16 @@ body {
     right: 0px;
 }
 
-.table-condensed {
-    border-top: 0px;
+.tdm-item {
+    margin-bottom: 3em;
 }
 
 .tdm-cell {
+    padding: 0em 1em;
+}
+
+.tdm-choice {
+    text-align: center;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }

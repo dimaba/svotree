@@ -68,6 +68,15 @@ class NineItemTDM(Page):
     def vars_for_template(self):
         decisions = [
             {'number': 1, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 2, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 3, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 4, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 5, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 6, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 7, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 8, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+            {'number': 9, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
+
         ]
 
         return {'nine_item_tdm_decisions': decisions}
