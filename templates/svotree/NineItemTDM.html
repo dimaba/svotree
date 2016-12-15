@@ -17,17 +17,22 @@
                      <div class="panel-heading"><strong>{{ decision.number }}</strong></div>
                      <div class="panel-body">
                         <div class="row">
-                            <div class="col-sm-4" align="center">
+                            <div class="col-sm-3" align="right">
+                                <strong>You receive</strong><br>
+                                <br>
+                                <strong>Other receives</strong><br>
+                            </div>
+                            <div class="col-sm-3" align="center">
                                 <strong>A</strong><br>
                                 {{ decision.optionA }}<br>
                                 <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="A" />
                             </div>
-                            <div class="col-sm-4" align="center">
+                            <div class="col-sm-3" align="center">
                                 <strong>B</strong><br>
                                 {{ decision.optionB }}<br>
                                 <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="B" />
                             </div>
-                            <div class="col-sm-4" align=""center>
+                            <div class="col-sm-3" align=""center>
                                 <strong>C</strong><br>
                                 {{ decision.optionC }}<br>
                                 <input type="radio" name="nine_item_tdm_{{ decision.number }}" value="C" />
