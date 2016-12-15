@@ -1,0 +1,60 @@
+{% extends "normative_conflict_svo/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_slider %}
+
+    <div class="alert alert-danger" id="confirmation_error" hidden="True">You have not yet confirmed all of your choices.
+    Please check your chosen allocations and confirm them.</div>
+
+    <div class="container-fluid">
+    {% for item_number in slider_items %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                     <div class="panel-heading"><strong>{{ item_number }}</strong></div>
+                     <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-2" align="center">You receive</div>
+                            <div class="col-sm-1" align="center"><span class="slider-value" id="item{{ item_number }}_self">VALUE N/A</span></div>
+                            <div class="col-sm-7"><div class="slider-reference"><div class="value-start" id="item{{ item_number }}_self_start">VALUE N/A</div><div class="value-end" id="item{{ item_number }}_self_end">VALUE N/A</div></div></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2" align="center"></div>
+                            <div class="col-sm-1" align="center"></div>
+                            <div class="col-sm-7 slider-horizontal-col">
+                                <input name="slider{{ item_number }}" id="item{{ item_number }}" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="0.1" data-slider-value="50" />
+                            </div>
+                            <div class="col-sm-2"><button type="button" class="btn btn-primary btn-large" id="item{{ item_number }}_confirm" value="False">Confirm</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2" align="center">Other receives</div>
+                            <div class="col-sm-1" align="center"><span class="slider-value" id="item{{ item_number }}_other">VALUE N/A</span></div>
+                            <div class="col-sm-7"><div class="slider-reference"><div class="value-start" id="item{{ item_number }}_other_start">VALUE N/A</div><div class="value-end" id="item{{ item_number }}_other_end">VALUE N/A</div></div></div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    <button type="button" class="btn btn-primary btn-large" id="continue_button" >Continue</button>
+    <button id="hidden_submit_button" type="submit" hidden="True"></button>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script src="{% static "normative_conflict_svo/js/slider.js" %}"></script>
+    <script src="{% static "normative_conflict_svo/js/slider_primary.js" %}"></script>
+    <script src="{% static "normative_conflict_svo/js/slider_primary_continuous.js" %}"></script>
+
+{% endblock %}

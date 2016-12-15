@@ -1,0 +1,12 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block app_styles %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css" rel=stylesheet>
+    <link href="{% static "normative_conflict_svo/css/main.css" %}" rel=stylesheet>
+{% endblock %}
+
+{% block app_scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/bootstrap-slider.min.js"></script>
+    <script src="{% static "normative_conflict_svo/js/general.js" %}"></script>
+{% endblock %}

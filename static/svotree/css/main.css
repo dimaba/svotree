@@ -1,0 +1,112 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 30px;
+}
+
+.error {
+    color: red;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #A3C2FF;
+    border-color: #1975FF;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #1975FF;
+  border-color: #1975FF;
+}
+
+.decision {
+    color: #1975FF;
+}
+
+.consequence {
+    color: #FF8204;
+}
+
+.resultbox {
+    background-color: #FFE6CD;
+    text-align: right;
+}
+
+.slider-value {
+    font-weight: bold;
+    color: #337ab7;
+}
+
+.slider-horizontal-col {
+    padding: 0px 25px;
+}
+
+.slider.slider-horizontal {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.slider-selection {
+    cursor: pointer;
+    box-shadow: none;
+    background-image: none;
+}
+
+.slider-selection.tick-slider-selection {
+    background-image: none;
+}
+
+.slider-tick {
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #89cdef 0%, #fff 100%);
+    background-image: -o-linear-gradient(top, #89cdef 0%, #fff 100%);
+    background-image: linear-gradient(to bottom, #89cdef 0%, #fff 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
+    opacity: 1;
+}
+
+.slider-tick.in-selection {
+    background-image: -webkit-linear-gradient(top, #89cdef 0%, #fff 100%);
+    background-image: -o-linear-gradient(top, #89cdef 0%, #fff 100%);
+    background-image: linear-gradient(to bottom, #89cdef 0%, #fff 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
+    opacity: 1;
+}
+
+.slider-reference {
+    position: relative;
+    font-weight: 200;
+    font-size: small;
+}
+
+.value-start{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.value-end{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
