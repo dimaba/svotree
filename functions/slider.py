@@ -113,3 +113,23 @@ def svo_angle(mean_allocation_self, mean_allocation_other):
     # With the default values of the slider measure, the origin is at 0,0 but the center of the circle is at 50,50
     # By subtracting 50 from both mean allocations we compute the angle from the center of the circle
     return math.degrees(math.atan2(mean_allocation_other - 50, mean_allocation_self - 50))
+
+
+def svo_classification(angle):
+    """
+    Determine a person's social value orientation category based on slider measure angle. (Cutoffs as per Murphy,
+    Ackermann & Handgraaf 2011)
+
+    params: SVO angle in degrees
+    returns: The person's social value orientation classification
+    effects: None
+    """
+
+    if angle < -12.04:
+        return "Competitive"
+    elif angle < 22.45:
+        return "Individualistic"
+    elif angle < 57.15:
+        return "Prosocial"
+    else:
+        return "Altruistic"

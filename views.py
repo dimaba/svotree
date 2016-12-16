@@ -1,6 +1,6 @@
 from . import models
 from ._builtin import Page, WaitPage
-from .functions import slider
+from .functions import slider, tdm9
 from otree.api import Currency as c, currency_range
 from .models import Constants
 
@@ -31,6 +31,7 @@ class SliderPrimaryDiscrete(Page):
         mean_allocations = slider.mean_allocations(chosen_values, discrete=True)
         svo_slider_angle = slider.svo_angle(mean_allocations['self'], mean_allocations['other'])
         self.player.slider_angle = svo_slider_angle
+        self.player.slider_classification = slider.svo_classification(svo_slider_angle)
 
 
 class SliderPrimaryContinuous(Page):
@@ -59,35 +60,59 @@ class SliderPrimaryContinuous(Page):
         mean_allocations = slider.mean_allocations(chosen_values, discrete=False)
         svo_slider_angle = slider.svo_angle(mean_allocations['self'], mean_allocations['other'])
         self.player.slider_angle = svo_slider_angle
+        self.player.slider_classification = slider.svo_classification(svo_slider_angle)
 
 
 class NineItemTDM(Page):
 
-    #form
+    form_model = models.Player
+    form_fields = [
+        "nine_item_tdm_1",
+        "nine_item_tdm_2",
+        "nine_item_tdm_3",
+        "nine_item_tdm_4",
+        "nine_item_tdm_5",
+        "nine_item_tdm_6",
+        "nine_item_tdm_7",
+        "nine_item_tdm_8",
+        "nine_item_tdm_9",
+    ]
 
     def vars_for_template(self):
-        decisions = [
-            {'number': 1, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 2, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 3, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 4, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 5, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 6, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 7, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 8, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
-            {'number': 9, 'optionA': {'self': 80, 'other': 0}, 'optionB': {'self': 92, 'other': 40}, 'optionC': {'self': 80, 'other': 80}},
 
-        ]
+        return {'nine_item_tdm_decisions': tdm9.decisions}
 
-        return {'nine_item_tdm_decisions': decisions}
+    def before_next_page(self):
+        chosen_values = {
+            1: self.player.nine_item_tdm_1,
+            2: self.player.nine_item_tdm_2,
+            3: self.player.nine_item_tdm_3,
+            4: self.player.nine_item_tdm_4,
+            5: self.player.nine_item_tdm_5,
+            6: self.player.nine_item_tdm_6,
+            7: self.player.nine_item_tdm_7,
+            8: self.player.nine_item_tdm_8,
+            9: self.player.nine_item_tdm_9
+        }
+
+        self.player.nine_item_tdm_prosocial = tdm9.count_decisions_of_type("Prosocial", chosen_values)
+        self.player.nine_item_tdm_individualistic = tdm9.count_decisions_of_type("Individualistic", chosen_values)
+        self.player.nine_item_tdm_competitive = tdm9.count_decisions_of_type("Competitive", chosen_values)
+
+        self.player.nine_item_tdm_classification = tdm9.svo_type(chosen_values)
+
 
 class DebugDisplayPage(Page):
 
     def vars_for_template(self):
-        return {'angle': self.player.slider_angle}
+        return {'angle': self.player.slider_angle, 'classification_slider': self.player.slider_classification}
+
 
 page_sequence = [
+    NineItemTDM,
+    DebugDisplayPage,
     SliderPrimaryDiscrete,
+    DebugDisplayPage,
     SliderPrimaryContinuous,
-    NineItemTDM
+    DebugDisplayPage,
 ]
