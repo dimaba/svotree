@@ -2,25 +2,71 @@
 
 <div class="instructions well well-lg">
 
-    <p>
-        In this task, imagine that you have been randomly paired with another person,
-        whom we will refer to as <strong>the other</strong>. This other person is someone you do not
-        know and will remain mutually anonymous. All of your choices are
-        completely confidential.<br>
-        You will be making a series of decisions about allocating resources between you
-        and this other person. For each of the following questions, please indicate the
-        distribution you prefer most by <strong>moving the slider along the scale
-        to your preferred payoff allocation</strong>.<br>
-        You can only make one selection for each question. Your decisions
-        will yield money for both yourself and the other person.
-    </p>
+    <div>
+        <p>
+            In this task, imagine that you have been randomly paired with another person,
+            whom we will refer to as <strong>the other</strong>. This other person is someone you do not
+            know and will remain mutually anonymous. All of your choices are
+            completely confidential.<br>
+            You will be making a series of decisions about allocating resources between you
+            and this other person. For each of the following questions, please indicate the
+            distribution you prefer most by <strong>moving the slider along the scale
+            to your preferred payoff allocation</strong>.<br>
+            You can only make one selection for each question. Your decisions
+            will yield money for both yourself and the other person.
+        </p>
+    </div>
 
-    <p>
-        There are no right or wrong answers, this is all about personal preferences. After you have made
-        your decision, <strong>make it final by pressing the Confirm button to the right of the scale.</strong>
-        As you can see, your choices will influence both the amount of points you receive and the
-        amount of points the other receives.
-    </p>
+    <div class="panel-body" style="margin-top: 2em; margin-bottom: 2em; border: 1px solid #ddd">
+       <div class="row"">
+           <div class="col-sm-2" align="center"><strong>EXAMPLE</strong></div>
+           <div class="col-sm-1"></div>
+           <div class="col-sm-7"></div>
+           <div class="col-sm-2"></div>
+       </div>
+       <div class="row">
+           <div class="col-sm-2" align="center">You receive</div>
+           <div class="col-sm-1" align="center"><span class="slider-value">50</span></div>
+           <div class="col-sm-7"><div class="slider-reference"><div class="value-start">30</div><div class="value-end">70</div></div></div>
+           <div class="col-sm-2"></div>
+       </div>
+       <div class="row">
+           <div class="col-sm-2" align="center"></div>
+           <div class="col-sm-1" align="center"></div>
+            {% if type == "discrete" %}
+           <div class="col-sm-7 slider-horizontal-col"><input id="example" type="text" data-slider-tooltip="hide" data-slider-min="1" data-slider-max="9" data-slider-step="1" data-slider-ticks="[1, 2, 3, 4, 5, 6, 7, 8, 9]" data-slider-value=5 disabled="True" /></div>
+            {% elif type == "continuous" %}
+            <div class="col-sm-7 slider-horizontal-col">
+                <input id="example" type="text" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="100" data-slider-step="0.1" data-slider-value=50 disabled="True"/>
+            </div>
+            {% endif %}
+           <div class="col-sm-2"><button type="button" class="btn btn-primary btn-large" disabled="True">Confirm</button></div>
+       </div>
+       <div class="row">
+           <div class="col-sm-2" align="center">Other receives</div>
+           <div class="col-sm-1" align="center"><span class="slider-value"">40</span></div>
+           <div class="col-sm-7"><div class="slider-reference"><div class="value-start">80</div><div class="value-end">0</div></div></div>
+           <div class="col-sm-2"></div>
+        </div>
+    </div>
 
+    <div>
+        <p>
+            There are no right or wrong answers, this is all about personal preferences. After you have made
+            your decision, <strong>make it final by pressing the Confirm button to the right of the scale.</strong>
+            As you can see, your choices will influence both the amount of points you receive and the
+            amount of points the other receives. When you have made all your decisions, <strong>press the Continue
+            button at the bottom of the screen</strong> to complete this decision task.
+        </p>
+    </div>
 </div>
 
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/bootstrap-slider.min.js"></script>
+    <script>
+    $("#example").slider({});
+    </script>
+    <script>
+    $("#example").prop('disabled', true);
+    </script>
+{% endblock %}

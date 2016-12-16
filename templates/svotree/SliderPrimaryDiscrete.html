@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    {% include Constants.instructions_slider %}
+    {% include Constants.instructions_slider with type="discrete" %}
 
     <div class="alert alert-danger" id="confirmation_error" hidden="True">You have not yet confirmed all of your choices.
     Please check your chosen allocations and confirm them.</div>
@@ -26,8 +26,8 @@
                             <div class="col-sm-2"></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-2" align="center">||</div>
-                            <div class="col-sm-1" align="center">||</div>
+                            <div class="col-sm-2" align="center"></div>
+                            <div class="col-sm-1" align="center"></div>
                             <div class="col-sm-7 slider-horizontal-col"><input name="slider{{ item_number }}" id="item{{ item_number }}" type="text" data-slider-min="1" data-slider-max="9" data-slider-step="1" data-slider-ticks="[1, 2, 3, 4, 5, 6, 7, 8, 9]" /></div>
                             <div class="col-sm-2"><button type="button" class="btn btn-primary btn-large" id="item{{ item_number }}_confirm" value="False">Confirm</button></div>
                         </div>
@@ -54,8 +54,8 @@ TODO: MAYBE HIGHCHARTS? OTREE INCLUDES THAT (SEE TEMPLATES -> PLUGINS)
 
 {% block scripts %}
 
-    <script src="{% static "normative_conflict_svo/js/slider.js" %}"></script>
-    <script src="{% static "normative_conflict_svo/js/slider_primary.js" %}"></script>
-    <script src="{% static "normative_conflict_svo/js/slider_primary_discrete.js" %}"></script>
+    <script src="{% static "svotree/js/slider.js" %}"></script>
+    <script src="{% static "svotree/js/slider_primary.js" %}"></script>
+    <script src="{% static "svotree/js/slider_primary_discrete.js" %}"></script>
 
 {% endblock %}
