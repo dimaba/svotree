@@ -87,5 +87,7 @@ class DebugDisplayPage(Page):
         return {'angle': self.player.slider_angle}
 
 page_sequence = [
-    SliderPrimaryDiscrete
+    SliderPrimaryDiscrete,
+    SliderPrimaryContinuous,
+    NineItemTDM
 ]

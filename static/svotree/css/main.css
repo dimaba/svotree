@@ -61,13 +61,15 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
 .slider-selection {
-    cursor: pointer;
     box-shadow: none;
     background-image: none;
+}
+
+.slider-handle {
+    cursor: move;
 }
 
 .slider-selection.tick-slider-selection {
@@ -82,6 +84,11 @@ body {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
     opacity: 1;
+}
+
+.slider.slider-disabled .slider-tick,
+.slider.slider-disabled .slider-handle {
+    cursor: not-allowed;
 }
 
 .slider-tick.in-selection {
