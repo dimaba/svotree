@@ -5,7 +5,7 @@ Functions to evaluate input from the nine-item triple dominance measure and calc
 decisions = [
     {'number': 1, 'A': {'self': 80, 'other': 0}, 'B': {'self': 92, 'other': 40},
      'C': {'self': 80, 'other': 80}},
-    {'number': 2, 'A': {'self': 94, 'other': 44}, 'B': {'self': 85, 'other': 84},
+    {'number': 2, 'A': {'self': 94, 'other': 44}, 'B': {'self': 84, 'other': 84},
      'C': {'self': 84, 'other': 4}},
     {'number': 3, 'A': {'self': 88, 'other': 88}, 'B': {'self': 88, 'other': 4},
      'C': {'self': 100, 'other': 48}},
