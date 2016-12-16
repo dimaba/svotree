@@ -105,7 +105,7 @@ class NineItemTDM(Page):
 class DebugDisplayPage(Page):
 
     def vars_for_template(self):
-        return {'angle': self.player.slider_angle, 'classification_slider': self.player.slider_classification}
+        return {'angle': self.player.slider_angle, 'classification_slider': self.player.slider_classification, 'tdm_prosocial': self.player.nine_item_tdm_prosocial, 'tdm_individualistic': self.player.nine_item_tdm_individualistic, 'tdm_competitive': self.player.nine_item_tdm_competitive, 'classification_tdm': self.player.nine_item_tdm_classification}
 
 
 page_sequence = [
