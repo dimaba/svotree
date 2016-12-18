@@ -28,7 +28,7 @@ class SliderPrimaryDiscrete(Page):
             'item5': self.player.slider5,
             'item6': self.player.slider6
         }
-        mean_allocations = slider.mean_allocations(chosen_values, discrete=True)
+        mean_allocations = slider.mean_allocations_discrete(chosen_values)
         svo_slider_angle = slider.svo_angle(mean_allocations['self'], mean_allocations['other'])
         self.player.slider_angle = svo_slider_angle
         self.player.slider_classification = slider.svo_classification(svo_slider_angle)
@@ -57,7 +57,7 @@ class SliderPrimaryContinuous(Page):
             'item5': self.player.slider5,
             'item6': self.player.slider6
         }
-        mean_allocations = slider.mean_allocations(chosen_values, discrete=False)
+        mean_allocations = slider.mean_allocations_continuous(chosen_values)
         svo_slider_angle = slider.svo_angle(mean_allocations['self'], mean_allocations['other'])
         self.player.slider_angle = svo_slider_angle
         self.player.slider_classification = slider.svo_classification(svo_slider_angle)

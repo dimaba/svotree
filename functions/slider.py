@@ -70,9 +70,9 @@ def proportional_position_continuous(value):
     return proportional_position(value, 0, 100)
 
 
-def mean_allocations(chosen_values, discrete):
+def mean_allocations_discrete(chosen_values):
     """
-    Calculate the mean allocations to self and other based on all chosen values on a given group of slider items.
+    Calculate the mean allocations to self and other based on all chosen values on a given group of slider items, assuming discrete choices.
 
     params: the values must be passed as a dictionary with the structure key = item+number, value = chosen value on
         that item
@@ -84,16 +84,36 @@ def mean_allocations(chosen_values, discrete):
     total_allocation_other = 0
 
     for item, value in chosen_values.items():
-        if discrete:
-            chosen_allocation = allocation(item, proportional_position_discrete(value))
-        else:
-            chosen_allocation = allocation(item, proportional_position_continuous(value))
+        chosen_allocation = allocation(item, proportional_position_discrete(value))
 
-        allocation_to_self = chosen_allocation['self']
-        allocation_to_other = chosen_allocation['other']
+        total_allocation_self += chosen_allocation['self']
+        total_allocation_other += chosen_allocation['other']
 
-        total_allocation_self += allocation_to_self
-        total_allocation_other += allocation_to_other
+    mean_allocation_self = total_allocation_self / len(chosen_values)
+    mean_allocation_other = total_allocation_other / len(chosen_values)
+
+    return {'self': mean_allocation_self, 'other': mean_allocation_other}
+
+
+def mean_allocations_continuous(chosen_values):
+    """
+    Calculate the mean allocations to self and other based on all chosen values on a given group of slider items, assuming continuous scale.
+
+    params: the values must be passed as a dictionary with the structure key = item+number, value = chosen value on
+        that item
+    returns: A dictionary of mean allocations to self and other
+    effects: None
+    """
+
+    total_allocation_self = 0
+    total_allocation_other = 0
+
+    for item, value in chosen_values.items():
+        chosen_allocation = allocation(item, proportional_position_continuous(value))
+
+        total_allocation_self += chosen_allocation['self']
+        total_allocation_other += chosen_allocation['other']
+
 
     mean_allocation_self = total_allocation_self / len(chosen_values)
     mean_allocation_other = total_allocation_other / len(chosen_values)
