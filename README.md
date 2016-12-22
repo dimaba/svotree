@@ -26,6 +26,9 @@ session config or create a new session config which has `svoTree` in the app seq
 measures when running this session, check that all included pages are listed in the page sequence at the bottom of 
 `views.py`.
 
+The `views.py` contains complete working examples of pages which display, collect input from, and calculate Social Value
+Orientation for each of the included measures. 
+
 ## Contents
 
 Included in `svoTree` are several measures of Social Value Orientation. So far, the repository contains two measures. First,
@@ -49,3 +52,5 @@ shows what you will need to implement in your own views in order to use `svotree
 1. Au, W. T., & Kwong, J. Y. Y. (2004). Measurements and effects of social-value orientation in social dilemmas. In R. Suleiman, D. V Budescu, I. Fischer, & D. M. Messick (Eds.), Contemporary psychological research on social dilemmas (pp. 71–98). Cambridge: Cambridge University Press.
 2. Murphy, R. O., Ackermann, K. A., & Handgraaf, M. J. J. (2011). Measuring Social Value Orientation. Judgment and Decision Making, 6(8), 1–12. http://doi.org/10.2139/ssrn.1804189
 3. Van Lange, P. a. M., Otten, W., De Bruin, E. M. N., & Joireman, J. a. (1997). Development of prosocial, individualistic, and competitive orientations: Theory and preliminary evidence. Journal of Personality and Social Psychology, 73(4), 733–746. doi:10.1037//0022-3514.73.4.733
+
+## License
