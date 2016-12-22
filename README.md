@@ -14,10 +14,14 @@ Out of the box, this repository functions as an oTree app which can be placed in
 app sequence for your session. Within the app you can of course freely choose which measures (pages) are displayed. You 
 can also modify any aspect of the styling or functionality. 
 
-You can clone or download the full contents of this repository directly from this page. Place the `svoTree` folder in
-your oTree experiment directory and add `svoTree` to the app sequence of any sessions in which you want to use it. This 
-is the recommended installation method. It is also possible to install `svoTree` from PyPI. You should only do this if 
-you want to use templates, pages and/or functions from `svoTree` as part of another app *and* do not need to modify 
+#### Recommended
+- Clone or download the full contents of this repository directly from this page. 
+- Place the `svoTree` folder in your oTree experiment directory and add `svoTree` to the app sequence of any sessions in which you want to use it. 
+This is the recommended installation method. 
+
+#### PyPI
+It is also possible to install `svoTree` from PyPI. You should only do this if you want to use templates, pages and/or functions 
+from `svoTree` as part of another app *and* do not need to modify 
 them at all. If you do that, you will need to add `svoTree` to the `INSTALLED_APPS` list in oTree's `settings.py`. For
 most use cases, especially if you want to modify cosmetics or functionality, downloading or cloning the repository directly
  is recommended. `svotree` has no dependencies outside of the packages included with oTree and the Python standard library.
