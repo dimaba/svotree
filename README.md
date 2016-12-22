@@ -20,13 +20,6 @@ can also modify any aspect of the styling or functionality.
 - Add `svoTree` to the app sequence of any sessions in which you want to use it
 This is the recommended installation method. 
 
-#### PyPI
-It is also possible to install `svoTree` from PyPI. You should only do this if you want to use templates, pages and/or functions 
-from `svoTree` as part of another app *and* do not need to modify 
-them at all. If you do that, you will need to add `svoTree` to the `INSTALLED_APPS` list in oTree's `settings.py`. For
-most use cases, especially if you want to modify cosmetics or functionality, downloading or cloning the repository directly
- is recommended. `svotree` has no dependencies outside of the packages included with oTree and the Python standard library.
-
 ## Examples
 To try all measures of SVO included in `svoTree`, add `svoTree` to the app sequence of an existing
 session config or create a new session config which has `svoTree` in the app sequence. To make sure you see all included
