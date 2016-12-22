@@ -54,3 +54,5 @@ shows what you will need to implement in your own views in order to use `svotree
 3. Van Lange, P. a. M., Otten, W., De Bruin, E. M. N., & Joireman, J. a. (1997). Development of prosocial, individualistic, and competitive orientations: Theory and preliminary evidence. Journal of Personality and Social Psychology, 73(4), 733–746. doi:10.1037//0022-3514.73.4.733
 
 ## License
+
+[MIT License](LICENSE)
