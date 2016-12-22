@@ -16,7 +16,8 @@ can also modify any aspect of the styling or functionality.
 
 #### Recommended
 - Clone or download the full contents of this repository directly from this page. 
-- Place the `svoTree` folder in your oTree experiment directory and add `svoTree` to the app sequence of any sessions in which you want to use it. 
+- Place the `svoTree` folder in your oTree experiment directory 
+- Add `svoTree` to the app sequence of any sessions in which you want to use it
 This is the recommended installation method. 
 
 #### PyPI
